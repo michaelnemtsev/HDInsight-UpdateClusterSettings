@@ -1,6 +1,6 @@
 ##################################################################################################
 #
-# This code snippet demonstrate how to update HDInsight settings and change some variables
+# This code snippet demonstrates how to update HDInsight settings and change some variables
 # More details about the code can be find here 
 # https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-manage-ambari-rest-api 
 #
@@ -10,7 +10,7 @@ $LocalAdminUser = "admin"
 $LocalAdminPassword = ConvertTo-SecureString -String '<clusterpass>' -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential($LocalAdminUser, $LocalAdminPassword)
 $ClusterName = "<clusterName>"
-# In this example, the increase HTTP header size param is used as the HDInsight variables to change
+# In this example, we increase the default size of HTTP header (part of hive-site.xml)
 $hiveParameters = "hive.server2.thrift.http.request.header.size=13310072", "hive.server2.thrift.http.response.header.size=13310072"
 $clusterType = "hive-site"
 
